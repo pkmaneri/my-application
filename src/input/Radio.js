@@ -1,7 +1,7 @@
 import React from "react"
 
-export default class Radio extends React.Component{
-    state =  {radioValue:""}
+export default class Radio extends React.Component {
+    state = { radioValue: "" }
     handleRadio(e) {
         this.setState({
             radioValue: e.target.value
@@ -10,19 +10,19 @@ export default class Radio extends React.Component{
     }
 
 
-    render(){
+    render() {
         return (
             <>
-            {this.state.radioValue}
-                {this.props.options.map((option, i)=>{
+                {this.state.radioValue}
+                {this.props.options.map((option, i) => {
                     return (
-                        <>
-                        {option.labelText}
-                        <input  type="radio" 
-                                        name={this.props.name}
-                                        onChange={this.handleRadio.bind(this)} 
-                                        value={option.value} ></input>
-                                        </>
+                        <span key={i}>
+                            {option.labelText}
+                            <input type="radio"
+                                name={this.props.name}
+                                onChange={this.handleRadio.bind(this)}
+                                value={option.value} ></input>
+                        </span>
                     )
                 })}
             </>
