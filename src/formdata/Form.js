@@ -9,7 +9,7 @@ export default class Form extends React.Component {
     render() {
         return (
             <div className="divStyle">
-                <table className="table">
+                <table className="table table-bordered">
                     <tbody>
                     <tr>
                             <td>                                
@@ -69,7 +69,7 @@ export default class Form extends React.Component {
                         
                     </tbody>
                 </table>
-                <View />
+                <View name="anil" gender="male" vehicle="bike" insurance="false"/>
             </div>
         )
     }

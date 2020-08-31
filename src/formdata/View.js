@@ -3,7 +3,9 @@ export default class View extends React.Component {
     render() {
         return (
             <div className="divStyle">
-            3
+                {this.props.name},{this.props.gender} wants {this.props.vehicle}  
+                {this.props.insurance === "true" ? " with" :" without"} insurance
+            
             </div>
         )
     }
