@@ -12,16 +12,16 @@ export default class Form extends React.Component {
                 <table className="table">
                     <tbody>
                     <tr>
-                            <td>
-                                <InputText/>
+                            <td>                                
+                                Enter name                               
                             </td>
                             <td>
-                                EnterName
+                            <InputText/>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <CheckBox />
+                                <CheckBox  />
                             </td>
                             <td>
                                 Please tick if you need insurance
