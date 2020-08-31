@@ -1,18 +1,17 @@
 import React from "react"
-export default class InputText extends React.Component{
-    state = {inputValue: 'hello world'};
-     handleInputText(e){
-         this.setState({
-             inputValue : e.target.value
-         })
+export default class InputText extends React.Component {
+    state = { inputValue: "" };
+    handleInputText(e) {
+        this.setState({
+            inputValue: e.target.value
+        })
     }
-    
-    render(){
-        return(
+
+    render() {
+        return (
             <>
-            {this.state.inputValue}
-            <input type="text" onChange={this.handleInputText.bind(this)} value={this.state.inputValue}></input>
-        </>
+                <input type="text" onChange={this.handleInputText.bind(this)} value={this.state.inputValue}></input>
+            </>
         )
     }
 }
