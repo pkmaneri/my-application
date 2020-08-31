@@ -50,7 +50,19 @@ export default class Form extends React.Component {
                                 Vehicle
                             </td>
                             <td>
-                                <SelectDropDown options={["bike","car"]}/>
+                                <SelectDropDown options={[
+                                    {
+                                        labelText:"Car",
+                                        value:"car"
+
+                                    },
+                                    {
+                                        labelText:"Bike",
+                                        value:"bike"
+
+                                    }
+                                    
+                                ]}/>
                             </td>
                            
                         </tr>
