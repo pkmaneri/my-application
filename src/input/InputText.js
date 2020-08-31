@@ -10,7 +10,7 @@ export default class InputText extends React.Component {
     render() {
         return (
             <>
-                <input type="text" onChange={this.handleInputText.bind(this)} value={this.state.inputValue}></input>
+                <input type="text" className="form-control" onChange={this.handleInputText.bind(this)} value={this.state.inputValue}></input>
             </>
         )
     }
