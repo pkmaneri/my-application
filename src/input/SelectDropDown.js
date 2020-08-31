@@ -6,7 +6,7 @@ export default class SelectDropDown extends React.Component{
               <select>
                   {
                       this.props.options.map((value, i) => {
-                      return <option key={i}>{value}</option>
+                      return <option key={i}>{value} </option>
                       })
                   }
             </select>

@@ -32,8 +32,17 @@ export default class Form extends React.Component {
                                 Gender
                             </td>
                             <td>
-                                Male <Radio name="gender"/>
-                                Female <Radio name="gender"/>
+                        
+                                 <Radio name="gender" options={[
+                                     {
+                                         labelText:"Male",
+                                         value:"male"
+                                     },
+                                     {
+                                         labelText:"Female",
+                                         value:"female"
+                                     }
+                                 ]}/>
                             </td>
                         </tr>
                         <tr>
