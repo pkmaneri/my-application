@@ -10,6 +10,7 @@ function App() {
     <div className="divStyle">
 
       <Form/>
+      {/* <LoginForm/> */}
        
     </div>
 
