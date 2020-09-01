@@ -7,31 +7,54 @@ import InputText from "../input/InputText"
 
 export default class Form extends React.Component {
     state = {
-        name : ""
+        name: "",
+        gender: "male",
+        vehicle: "car",
+        insurance: false
+
     }
-    getInputdata(value){
+    getInputdata(value) {
         console.log(value);
         this.setState({
-            name : value
+            name: value
         })
 
+    }
+    getRadiodata(value) {
+        console.log(value);
+        this.setState({
+            gender: value
+        })
+    }
+    getSelectdata(value) {
+        console.log(value);
+        this.setState({
+            vehicle: value
+
+        })
+    }
+    getCheckdata(value) {
+        console.log(value)
+        this.setState({
+            check: value
+        })
     }
     render() {
         return (
             <div className="divStyle">
                 <table className="table table-bordered">
                     <tbody>
-                    <tr>
-                            <td>                                
-                                Enter name                               
+                        <tr>
+                            <td>
+                                Enter name
                             </td>
                             <td>
-                            <InputText getInputdata={this.getInputdata.bind(this)}/>
+                                <InputText value={this.state.name} getInputdata={this.getInputdata.bind(this)} />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <CheckBox  />
+                                <CheckBox getCheckdata={this.getCheckdata.bind(this)} />
                             </td>
                             <td>
                                 Please tick if you need insurance
@@ -42,17 +65,19 @@ export default class Form extends React.Component {
                                 Gender
                             </td>
                             <td>
-                        
-                                 <Radio name="gender" options={[
-                                     {
-                                         labelText:"Male",
-                                         value:"male"
-                                     },
-                                     {
-                                         labelText:"Female",
-                                         value:"female"
-                                     }
-                                 ]}/>
+
+                                <Radio name="gender" options={[
+                                    {
+                                        labelText: "Male",
+                                        value: "male",
+                                        checked: true
+                                    },
+                                    {
+                                        labelText: "Female",
+                                        value: "female",
+                                        checked: false
+                                    }
+                                ]} getRadiodata={this.getRadiodata.bind(this)} />
                             </td>
                         </tr>
                         <tr>
@@ -62,24 +87,27 @@ export default class Form extends React.Component {
                             <td>
                                 <SelectDropDown options={[
                                     {
-                                        labelText:"Car",
-                                        value:"car"
+                                        labelText: "Car",
+                                        value: "car"
 
                                     },
                                     {
-                                        labelText:"Bike",
-                                        value:"bike"
+                                        labelText: "Bike",
+                                        value: "bike"
 
                                     }
-                                    
-                                ]}/>
+
+                                ]} getSelectdata={this.getSelectdata.bind(this)} />
                             </td>
-                           
+
                         </tr>
-                        
+
                     </tbody>
                 </table>
-                <View name={this.state.name} gender="male" vehicle="bike" insurance="false"/>
+                <View name={this.state.name}
+                    gender={this.state.gender}
+                    vehicle={this.state.vehicle}
+                    insurance={this.state.check} />
             </div>
         )
     }
