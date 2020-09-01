@@ -5,6 +5,7 @@ export default class InputText extends React.Component {
         this.setState({
             inputValue: e.target.value
         })
+        this.props.getInputdata(e.target.value)
     }
 
     render() {

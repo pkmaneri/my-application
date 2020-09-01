@@ -6,6 +6,16 @@ import SelectDropDown from "../input/SelectDropDown"
 import InputText from "../input/InputText"
 
 export default class Form extends React.Component {
+    state = {
+        name : ""
+    }
+    getInputdata(value){
+        console.log(value);
+        this.setState({
+            name : value
+        })
+
+    }
     render() {
         return (
             <div className="divStyle">
@@ -16,7 +26,7 @@ export default class Form extends React.Component {
                                 Enter name                               
                             </td>
                             <td>
-                            <InputText/>
+                            <InputText getInputdata={this.getInputdata.bind(this)}/>
                             </td>
                         </tr>
                         <tr>
@@ -69,7 +79,7 @@ export default class Form extends React.Component {
                         
                     </tbody>
                 </table>
-                <View name="anil" gender="male" vehicle="bike" insurance="false"/>
+                <View name={this.state.name} gender="male" vehicle="bike" insurance="false"/>
             </div>
         )
     }
