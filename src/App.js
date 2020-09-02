@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Form from './formdata/Form';
+import Form from './component/insurance/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginForm from './component/login/Form';
+import EmailForm from './component/email/Form';
+
 
 
 function App() {
@@ -10,7 +13,11 @@ function App() {
     <div className="divStyle">
 
       <Form/>
-      {/* <LoginForm/> */}
+      <LoginForm/>
+      <EmailForm/>
+      
+      
+      
        
     </div>
 

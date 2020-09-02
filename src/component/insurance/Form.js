@@ -1,16 +1,18 @@
 import React from "react"
 import View from "./View"
-import CheckBox from "../input/CheckBox"
-import Radio from "../input/Radio"
-import SelectDropDown from "../input/SelectDropDown"
-import InputText from "../input/InputText"
+import CheckBox from "../../component/shared/CheckBox"
+import Radio from "../../component/shared/Radio"
+import SelectDropDown from "../../component/shared/SelectDropDown"
+import InputText from "../../component/shared/InputText"
+
 
 export default class Form extends React.Component {
     state = {
         name: "",
         gender: "male",
         vehicle: "car",
-        insurance: false
+        insurance: false,
+
 
     }
     getInputdata(value) {
@@ -39,6 +41,8 @@ export default class Form extends React.Component {
             check: value
         })
     }
+    
+
     render() {
         return (
             <div className="divStyle">
@@ -49,7 +53,7 @@ export default class Form extends React.Component {
                                 Enter name
                             </td>
                             <td>
-                                <InputText value={this.state.name} getInputdata={this.getInputdata.bind(this)} />
+                                <InputText type="text" value={this.state.name} getInputdata={this.getInputdata.bind(this)} />
                             </td>
                         </tr>
                         <tr>
@@ -101,13 +105,15 @@ export default class Form extends React.Component {
                             </td>
 
                         </tr>
-
+                      
                     </tbody>
                 </table>
                 <View name={this.state.name}
                     gender={this.state.gender}
                     vehicle={this.state.vehicle}
-                    insurance={this.state.check} />
+                    insurance={this.state.check} 
+                    user={this.state.user}/>
+                
             </div>
         )
     }

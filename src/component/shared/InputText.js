@@ -7,7 +7,7 @@ export default class InputText extends React.Component {
     render() {
         return (
             <>
-                <input type="text"
+                <input type={this.props.type}
                  className="form-control"
                  onChange={this.handleInputText.bind(this)} 
                 value={this.props.value}></input>
