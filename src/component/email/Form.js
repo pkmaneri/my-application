@@ -1,6 +1,6 @@
 import React from "react"
 import InputText from "../shared/InputText";
-import CheckBox from "../../component/shared/CheckBox"
+import CheckBox from "../shared/CheckBox"
 
 export default class EmailForm extends React.Component {
     state = {

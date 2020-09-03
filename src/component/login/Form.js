@@ -1,5 +1,5 @@
 import React from "react"
-import InputText from "../../shared/InputText"
+import InputText from "../shared/InputText"
  
 export default class LoginForm extends React.Component{
     state = {
