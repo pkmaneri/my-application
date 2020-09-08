@@ -1,13 +1,13 @@
 import React from "react"
 import InputText from "../shared/InputText";
 import CheckBox from "../shared/CheckBox";
+import SelectDropDown from "../shared/SelectDropDown";
 export default class ProfileForm extends React.Component {
 
     state = {
         firstName: "",
         lastName: "",
-        cityName: "",
-        zipName: ""
+        cityName: ""
     }
     getInputFirstName(value) {
         console.log(value);
@@ -27,23 +27,23 @@ export default class ProfileForm extends React.Component {
             cityName: value
         })
     }
-    // getSelectStateName(value) {
-    //     console.log(value);
-    //     this.setState({
-    //         state: value
+    getSelectStateName(value) {
+        console.log(value);
+        this.setState({
+            state: value
 
-    //     })
-    // }
+        })
+    }
     getInputZipName(value) {
         console.log(value);
         this.setState({
             zipName: value
         })
     }
-    getSelectdata(value) {
+    getSelectStateName(value) {
         console.log(value);
         this.setState({
-            vehicle: value
+            State: value
 
         })
     }
@@ -84,16 +84,22 @@ export default class ProfileForm extends React.Component {
                             Please provide a valid city.
                          </div>
                     </div>
-                    {/* <div className="col-md-3 mb-3">
-                        <label htmlFor="validationCustom04">State</label>
-                        <selecte className="custom-select" id="validationCustom04" onChange={this.handleSelectstate.bind(this)} value={this.state.selectStatevalue} required>
-                            <option selected disabled value="">Choose...</option>
-                            <option>...</option>
-                        </selecte>
-                        <div className="invalid-feedback">
-                            Please select a valid state.
-                          </div>
-                    </div> */}
+                    <div className="col-md-3 mb-3">
+                    <label for="validationCustom04">State</label>
+                        <SelectDropDown options={[
+                                    {
+                                        labelText: "Patna",
+                                        value: "patna"
+
+                                    },
+                                    {
+                                        labelText: "Gaya",
+                                        value: "gaya"
+                                    }
+
+                                ]} getSelectdata={this.getSelectStateName.bind(this)} />
+
+                    </div>
                     <div className="col-md-3 mb-3">
                         <label htmlFor="validationCustom05">Zip</label>
                         <InputText type="text" className="form-control" id="validationCustom05" required value="Mark" required value={this.state.zipName} getInputdata={this.getInputZipName.bind(this)} />
@@ -106,7 +112,7 @@ export default class ProfileForm extends React.Component {
                 <CheckBox getCheckdata={this.getCheckdata.bind(this)} />
                     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                 </div>
-                    {this.state.firstName}{this.state.lastName}{this.state.cityName}{this.state.zipName}
+                    {this.state.firstName}{this.state.lastName}{this.state.cityName}{this.state.zipName}{this.state.stateName}
             </div >
         )
     }

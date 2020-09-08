@@ -22,9 +22,12 @@ function App() {
           <Form />
         </div>
         <div className="col">
-        <ProfileForm/>
+          <ProfileForm />
+        </div>
       </div>
-    </div>
+      <div className="col">
+        <OrderList />
+      </div>
     </div>
   );
 }
